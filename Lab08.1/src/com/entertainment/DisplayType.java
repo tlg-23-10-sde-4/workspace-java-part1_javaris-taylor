@@ -1,13 +1,16 @@
-/*
- * This code is sample code, provided as-is, and we make no
- * warranties as to its correctness or suitability for any purpose.
- *
- * We hope that it's useful to you.  Enjoy.
- * Copyright LearningPatterns Inc.
- */
-
 package com.entertainment;
 
+/*
+ * The listing of the five display types allowed.
+ * These 5 display objects are refenced as:
+ * com.entertainment.DisplayType.LCD
+ * etc.
+ */
 public enum DisplayType {
-    LED, OLED, PLASMA, LCD, CRT
+    LED,
+    OLED,
+    PLASMA,
+    LCD,
+    CRT
+
 }
