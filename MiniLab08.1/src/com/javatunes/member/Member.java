@@ -12,6 +12,7 @@ public class Member {
 
     public Member() {
         // NOTE: there is a call to super() here! as the first line of code
+        super();
         // What's the superclass of Member?  Is there a no-arg ctor in that class?
         System.out.println("Member ctor");
     }
