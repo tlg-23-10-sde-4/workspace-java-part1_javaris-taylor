@@ -18,6 +18,7 @@ public class IRS {
     private TaxPayer[] payers = new TaxPayer[100];
     private int currentIndex = 0;  // for dealing with the array
 
+    //
     public void collectTaxes() {
         for (int i = 0; i < currentIndex; i++) {
             payers[i].payTaxes();
