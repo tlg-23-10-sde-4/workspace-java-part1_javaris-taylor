@@ -23,6 +23,12 @@ public class SalariedEmployee extends Employee {
         setSalary(salary);
     }
 
+    // business methods
+    @Override
+    public void pay() {
+        System.out.format("%s is paid salary %s\n", getName(), getSalary());
+    }
+
     // accessor methods
 
     public double getSalary() {
@@ -33,10 +39,10 @@ public class SalariedEmployee extends Employee {
         this.salary = salary;
     }
 
+
     @Override
     public String toString() {
-        return "SalariedEmployee{name=" + getName() +
-                ", salary=" + getSalary() +
-                '}';
+        return  super.toString() +
+                ", salary=" + getSalary();
     }
 }
