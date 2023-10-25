@@ -17,6 +17,10 @@ public class Executive extends SalariedEmployee {
         super(name, hireDate, salary);
     }
 
+    public void fileReturn() {
+        System.out.println("Return filed electronically");
+    }
+
     // make the override for work
     @Override
     public void work() {
