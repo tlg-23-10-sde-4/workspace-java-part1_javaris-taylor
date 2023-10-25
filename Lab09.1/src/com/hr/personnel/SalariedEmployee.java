@@ -8,6 +8,7 @@ public class SalariedEmployee extends Employee{
 
     // fields -- variables
     double salary;
+    private final double STANDARD_DEDCUTION = 10_000.0;
 
 
     public SalariedEmployee() {
@@ -35,6 +36,11 @@ public class SalariedEmployee extends Employee{
     public void payTaxes() {
        double taxes = getSalary() * SALARIED_TAX_RATE;
         System.out.printf("%s paid taxes %s\n", getName(), taxes);
+    }
+
+    @Override
+    public double getStandardDeduction() {
+        return STANDARD_DEDCUTION;
     }
 
     public void takeVacation() {
