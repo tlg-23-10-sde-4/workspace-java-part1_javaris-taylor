@@ -34,7 +34,7 @@ public class SalariedEmployee extends Employee{
     @Override
     public void payTaxes() {
        double taxes = getSalary() * SALARIED_TAX_RATE;
-        System.out.printf("%s paid taxes %s", getName(), taxes);
+        System.out.printf("%s paid taxes %s\n", getName(), taxes);
     }
 
     public void takeVacation() {
