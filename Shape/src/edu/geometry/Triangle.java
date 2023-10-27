@@ -2,31 +2,31 @@ package edu.geometry;
 
 public class Triangle implements Shape{
 
-    double base;
-    double height;
+    double angle;
+    double side1;
+    double side2;
 
-    public Triangle(double base, double height) {
-        setBase(base);
-        setHeight(height);
-    }
-
-    public void Area() {
-          double  area =  (1 / 2) * base * height;
-        System.out.println("The area of the triangle is: " + area);
+    public Triangle(double side1, double side2, double angle) {
+        this.angle = angle;
+        this.side1 = side1;
+        this.side2 = side2;
     }
 
-    double getBase() {
-        return base;
+    public double area() {
+          return  (getSide1() * getSide2() * Math.sin(getAngle())) * .5;
     }
 
-    void setBase(double base) {
-        this.base = base;
+    double getAngle() {
+        return angle;
     }
 
-    double getHeight() {
-        return height;
+    double getSide1() {
+        return side1;
     }
-    void setHeight(double height) {
-        this.height = height;
+
+    double getSide2() {
+        return side2;
     }
+
+
 }

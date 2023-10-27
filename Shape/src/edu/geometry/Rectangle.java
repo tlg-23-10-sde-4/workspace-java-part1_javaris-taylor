@@ -2,30 +2,28 @@ package edu.geometry;
 
 public class Rectangle implements Shape {
 
-    double length;
-    double width;
-    public void Area() {
-        double area = length * width;
-        System.out.println("The area of the Rectangle is: " + area);
-    }
+    private double length;
+    private double width;
+
+
     public Rectangle(double length, double width) {
-        setLength(length);
-        setWidth(width);
+        this.length = length;
+        this.width = width;
     }
+
+
+    public double area() {
+        return getLength() * getWidth();
+    }
+
 
     double getLength() {
         return length;
-    }
-    void setLength(double length) {
-        this.length = length;
     }
 
     double getWidth() {
         return width;
     }
 
-    void setWidth(double width) {
-        this.width = width;
-    }
 
 }

@@ -1,6 +1,6 @@
 package edu.geometry;
 
 public interface Shape {
-
-    public void Area();
+    // public double area();
+    public double area();
 }
