@@ -195,10 +195,10 @@ public class InMemoryCatalog implements Catalog {
      * This is a yes/no answer.
      */
 
-    public boolean priceCheck() {
+    public boolean priceCheck(double price) {
         Collection<MusicItem> results = new ArrayList<>();
         for(MusicItem item : catalogData) {
-            if(item.getPrice() < 10) {
+            if(item.getPrice() < price) {
                 return false;
             }
         }
@@ -241,15 +241,21 @@ public class InMemoryCatalog implements Catalog {
     /**
      * TASK: find all items released in the 80s whose price is less than or equal to the specified price.
      */
-    public Collection<MusicItem> priceCheckAdvanced() {
+    public Collection<MusicItem> priceCheckAdvanced(double price) {
         Collection<MusicItem> results = new ArrayList<>();
+        Collection<MusicItem> advancedResults = new ArrayList<>();
 
         for(MusicItem item : catalogData) {
-            if(item.getReleaseDate().before(new Date(1980,Calendar.JANUARY,1)) && item.getReleaseDate().after(new Date(1990,Calendar.JANUARY,1))) {
+            if(item.getReleaseDate().toString().substring(0,3).equals("198")) {
                 results.add(item);
             }
         }
-        return results;
+        for(MusicItem item : results) {
+            if(item.getPrice() < price) {
+                advancedResults.add(item);
+            }
+        }
+        return advancedResults;
     }
 
     /**
@@ -257,6 +263,17 @@ public class InMemoryCatalog implements Catalog {
      * is a collection of items in that genre.  If there is a genre that we don't currently
      * sell, that key's associated value should be an empty collection, not null.
      */
+
+    public Map<MusicCategory,Collection<MusicItem>> genreMap() {
+        Map<MusicCategory,Collection<MusicItem>> result = new HashMap<>();
+
+            for(MusicCategory category : MusicCategory.values()) {
+             Collection<MusicItem> itemList = findByCategory(category);
+             result.put(category, itemList);
+            }
+
+        return result;
+    }
 
 
     @Override

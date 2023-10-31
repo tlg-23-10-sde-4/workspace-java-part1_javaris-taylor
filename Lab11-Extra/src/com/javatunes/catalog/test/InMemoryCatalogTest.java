@@ -41,7 +41,7 @@ class InMemoryCatalogTest {
         // testPriceCheck();
         // testGenreCheck();
         // testGenreTitles();
-         testPriceCheckAdvanced();
+        // testPriceCheckAdvanced();
     }
 
     private static void testFindSelfTitled() {
@@ -75,7 +75,7 @@ class InMemoryCatalogTest {
 
     private static void testPriceCheck() {
         InMemoryCatalog catalog = new InMemoryCatalog();
-        System.out.println(catalog.priceCheck());
+        System.out.println(catalog.priceCheck(12));
     }
 
     private static void testGenreCheck() {
@@ -85,12 +85,12 @@ class InMemoryCatalogTest {
 
     private static void testGenreTitles() {
         InMemoryCatalog catalog = new InMemoryCatalog();
-        System.out.println(catalog.genreTitles(MusicCategory.POP));
+        System.out.println(catalog.genreTitles(MusicCategory.ROCK));
     }
 
     private static void testPriceCheckAdvanced() {
         InMemoryCatalog catalog = new InMemoryCatalog();
-        dump(catalog.priceCheckAdvanced());
+        dump(catalog.priceCheckAdvanced(12));
     }
 
     private static void testFindById() {
